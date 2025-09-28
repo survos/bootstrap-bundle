@@ -13,10 +13,10 @@
     ],
     "type": "symfony-bundle",
     "require": {
-        "php": "^8.3",
-        "survos/installer": "^1.4||^2.0",
+        "php": "^8.4",
+        "survos/installer": "^2.0",
         "knplabs/knp-menu-bundle": "^3.2",
-        "survos/core-bundle": "^1.5",
+        "survos/core-bundle": "^2.0",
         "symfony/config": "^7.3",
         "symfony/dependency-injection": "^7.3",
         "symfony/http-kernel": "^7.3",
@@ -32,7 +32,7 @@
         "survos/auth-bundle": "^1.5",
         "symfony/security-bundle": "^7.3",
         "symfony/translation": "^7.3",
-        "phpunit/phpunit": "^11.5"
+        "phpunit/phpunit": "^12"
     },
     "autoload": {
         "psr-4": {
@@ -42,7 +42,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-main": "1.6-dev"
+            "dev-main": "2.1-dev"
         }
     },
     "scripts": {
@@ -54,30 +54,7 @@
     },
     "config": {
         "allow-plugins": {
-            "survos/installer": true,
-            "endroid/installer": true
+            "survos/installer": true
         }
-    },
-    "conflict": {
-        "survos/api-grid-bundle": "<1.2.57",
-        "survos/auth-bundle": "<1.2.57",
-        "survos/barcode-bundle": "<1.2.57",
-        "survos/command-bundle": "<1.2.57",
-        "survos/crawler-bundle": "<1.2.57",
-        "survos/doc-bundle": "<1.2.57",
-        "survos/faker-bundle": "<1.2.57",
-        "survos/grid-bundle": "<1.2.57",
-        "survos/grid-group-bundle": "<1.2.57",
-        "survos/html-prettify-bundle": "<1.2.57",
-        "survos/import-bridge": "<1.2.57",
-        "survos/inspection-bundle": "<1.2.57",
-        "survos/location-bundle": "<1.2.57",
-        "survos/maker-bundle": "<1.2.57",
-        "survos/providence-bundle": "<1.2.57",
-        "survos/ruler-bundle": "<1.2.57",
-        "survos/stripe-product": "<1.2.57",
-        "survos/tree-bundle": "<1.2.57",
-        "survos/wiki-bundle": "<1.2.57",
-        "survos/workflow-helper-bundle": "<1.2.57"
     }
 }
