@@ -1,0 +1,65 @@
+{# @SurvosBootstrap/layout/base.html.twig #}
+<!doctype html>
+<html lang="{{ app.request.locale|default('en') }}">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>{% block title %}{{ block('page_title') is defined ? block('page_title') : 'Tabler App' }}{% endblock %}</title>
+
+    {# Tabler/Bootstrap assets go here via asset-mapper/importmap later #}
+    {% block stylesheets %}{% endblock %}
+    {% block javascripts %}
+      {{ importmap('app') }}
+    {% endblock %}
+  </head>
+  <body class="{% block body_class %}{% endblock %}" data-turbo="false">
+    <div class="page">
+
+      {% block header %}
+        <twig:tabler_header
+          pretitle="Overview"
+          title="Dashboard"
+          subtitle="Starter base layout (BootstrapBundle)"
+          :dark="false"
+          :overlap="false"
+          :showActions="true"
+          :debug="false"
+        />
+      {% endblock %}
+
+      <div class="page-wrapper">
+        {% block flashes %}{% endblock %}
+
+        <div class="page-body">
+          <div class="container-xl">
+            <div class="row row-cards">
+              <section id="{% block page_content_id %}{% endblock %}" class="{% block page_content_class %}content{% endblock %}">
+                {% block content %}
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="text-secondary">
+                        Default <code>content</code> block from <code>{{ _self }}</code>.
+                      </div>
+                    </div>
+                  </div>
+                {% endblock %}
+              </section>
+            </div>
+          </div>
+        </div>
+
+        {% block footer %}
+          <twig:tabler_footer
+            appName="My App"
+            :year="null"
+            :links="{
+              'Documentation': 'https://tabler.io/docs',
+              'License': '#'
+            }"
+            :debug="false"
+          />
+        {% endblock %}
+      </div>
+    </div>
+  </body>
+</html>

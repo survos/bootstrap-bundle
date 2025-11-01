@@ -1,0 +1,39 @@
+{# @SurvosBootstrap/components/tabler/footer.html.twig #}
+<footer class="footer border-top py-3 d-print-none">
+  <div class="container-xl">
+    <div class="row text-center align-items-center flex-row-reverse">
+      <div class="col-lg-auto ms-lg-auto">
+        <ul class="list-inline list-inline-dots mb-0">
+          {% for label, href in links %}
+            <li class="list-inline-item"><a href="{{ href }}" class="link-secondary">{{ label }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+        <ul class="list-inline list-inline-dots mb-0">
+          <li class="list-inline-item">
+            Copyright &copy; {{ year ?? "now"|date("Y") }}
+            <span class="link-secondary">{{ appName }}</span>. All rights reserved.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="small mt-2 opacity-50">
+      <code>{{ _self }}</code>
+    </div>
+
+    {% if debug %}
+      <div class="card card-sm mt-3">
+        <div class="card-body">
+          <div class="subheader mb-2">Footer props (debug)</div>
+          <pre class="m-0">{{ {
+            year: year,
+            appName: appName,
+            links: links
+          }|json_encode(constant('JSON_PRETTY_PRINT')) }}</pre>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</footer>
