@@ -2,7 +2,6 @@
 {#    {% set menuItem = knp_menu_get(menuAlias, path, options) %} #}
 {% set theme = theme_option('theme') %}
 <div title="{{ type }}">
-
     {% if type in [SEARCH_MENU] %}
         {# really just one child for searching, the root.   #}
         {% if menuItem.children %}

@@ -104,10 +104,14 @@
                 </button>
             </div>
             <div class="collapse custom-collapse navbar-collapse" id="navbarResponsive">
-                {% block NAVBAR_MENU %}{{ component('menu', {type: NAVBAR_MENU, caller: _self}) }}{% endblock %}
-                {{ component('menu', {type: NAVBAR_MENU2, caller: _self}) }}
-                {{ component('menu', {type: NAVBAR_MENU3, caller: _self}) }}
-                {{ component('menu', {type: AUTH_MENU, caller: _self}) }}
+                {% block NAVBAR_MENU %}{{ component('menu', {type: NAVBAR_MENU, caller: _self}) }}
+                    {{ component('menu', {type: NAVBAR_MENU2, caller: _self}) }}
+                    {{ component('menu', {type: NAVBAR_MENU3, caller: _self}) }}
+                    {{ component('menu', {type: AUTH_MENU, caller: _self}) }}
+
+                {% endblock %}
+                {{ _self }}
+
                 {# force this right? #}
 
 {#                {{ include('@SurvosBootstrap/bootswatch/_example_right_navbar.html.twig') }}#}

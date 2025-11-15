@@ -69,8 +69,11 @@ Enjoy your theme!
                                 type: NAVBAR_MENU, caller: _self
                             }) }}
                                 {% endblock %}
+                            {{ component('menu', {type: NAVBAR_MENU2, caller: _self}) }}
                             {{ component('menu', {type: NAVBAR_MENU3, caller: _self}) }}
                             </div>
+                            {{ component('menu', {type: AUTH_MENU, caller: _self}) }}
+
 
 
                             {# force this right? #}

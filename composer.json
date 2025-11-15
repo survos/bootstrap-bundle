@@ -28,6 +28,7 @@
         "twig/intl-extra": "^3.8"
     },
     "require-dev": {
+        "roave/security-advisories": "dev-latest",
         "phpstan/phpstan": "^2.0",
         "survos/auth-bundle": "^1.5",
         "symfony/security-bundle": "^7.3||^8.0",
