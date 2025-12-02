@@ -9,14 +9,14 @@
                     {% block breadcrumb %}
                         <div class="page-pretitle">
                             {% block page_pretitle %}
-                                {% if preTitle != app.request.get('_route') %}
+                                {% if preTitle != app.request.query.get('_route') %}
                                 {{ preTitle }}
                                 {% endif %}
                             {% endblock %}
                         </div>
                     {% endblock %}
                     <h2 class="page-title">
-                        {% block page_title %}{{ title|default(app.request.get('_route')|trans(domain=translationDomain)) }}{% endblock %}
+                        {% block page_title %}{{ title|default(app.request.query.get('_route')|trans(domain=translationDomain)) }}{% endblock %}
                     </h2>
                     {% block page_subtitle %}
                         <div class="text-body-secondary mt-1">
@@ -27,7 +27,7 @@
             </div>
             <div class="{% block page_actions_class %}col-12 col-md-auto ms-auto d-print-none{% endblock %}">
                 {% block page_actions %}
-                {{ app.request.get('debug', false) ? '@page actions menu' }}
+                {{ app.request.query.get('debug', false) ? '@page actions menu' }}
 {#                    <div class="btn-list">#}
 {#                        <a href="#" class="btn btn-white">#}
 {#                            New view#}

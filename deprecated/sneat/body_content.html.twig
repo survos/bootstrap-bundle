@@ -72,7 +72,7 @@
 
             {% block sidebar %}
                 {{ include('@SurvosBootstrap/sneat/render_sidebar_menu.html.twig',  {
-                    debug: app.request.get('debug', false),
+                    debug: app.request.query.get('debug', false),
                     menuCode: 'survos_sidebar_menu'
                 }
                 ) }}

@@ -17,7 +17,7 @@ final class TablerPageHeader
     )
     {
         if ($preTitle === null) {
-            $this->preTitle = $this->requestStack->getCurrentRequest()->get('_route');
+//            $this->preTitle = $this->requestStack->getCurrentRequest();
         }
         if ($title === null) {
 
