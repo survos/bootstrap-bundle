@@ -19,6 +19,7 @@ survos_bootstrap:
       instance: null
       frontPage: false
       showAppMenu: false
+      showLocaleDropdown: true
 
 
   app:

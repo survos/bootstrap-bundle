@@ -122,6 +122,18 @@ Enjoy your theme!
 
         {% endblock %}
         {% block page_header %}
+            <div class="d-flex align-items-center gap-3">
+                {% if config().options.show_locale_dropdown %}
+                    <div class="d-inline-block d-lg-none">
+                        {{ include('@SurvosBootstrap/_navbar_language_dropdown.html.twig') }}
+                    </div>
+                {% endif %}
+                <button id="navbar-toggle-bundle" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
             <div class="{{ ''|tabler_container }}">
                 {# Page title #}
                 <div id="{% block page_header_id %}{% endblock %}" class="page-header d-print-none">

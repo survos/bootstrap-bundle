@@ -1,5 +1,5 @@
 {# @SurvosBootstrap/components/tabler/header.html.twig #}
-{% if false %}
+{% if showHeader|default(true) %}
 <div class="page-header d-print-none{{ dark|default(false) or overlap|default(false) ? ' text-white' : '' }}">
   <div class="container-xl">
     <div class="row align-items-center">
@@ -12,7 +12,7 @@
         <h2 class="page-title">{{ title }}</h2>
         {% endif %}
 
-        {% if subtitle %}
+        {% if subtitle|default(false) %}
           <div class="text-body-secondary mt-1{% if dark or overlap %} text-white-50{% endif %}">
             {{ subtitle }}
           </div>
@@ -22,7 +22,7 @@
           <code>{{ _self }}</code>
         </div>
 
-        {% if debug %}
+        {% if debug|default(app.request.query.get('debug', false)) %}
           <div class="card card-sm mt-3">
             <div class="card-body">
               <div class="subheader mb-2">Header props (debug)</div>
@@ -39,7 +39,21 @@
         {% endif %}
       </div>
 
-      {% if showActions %}
+        <div class="d-flex align-items-center gap-3">
+            {{ dump(config().options) }}
+            {% if config().options.show_locale_dropdown %}
+                <div class="d-inline-block d-lg-none">
+                    {{ include('@SurvosBootstrap/_navbar_language_dropdown.html.twig') }}
+                </div>
+            {% endif %}
+            <button id="navbar-toggle-bundle" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+
+
+        {% if showActions|default(true) %}
         <div class="col-12 col-md-auto ms-auto d-print-none">
           <div class="btn-list">
             <a href="#" class="btn btn-white">New view</a>
