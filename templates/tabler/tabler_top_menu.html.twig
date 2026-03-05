@@ -35,9 +35,21 @@
        rel="noreferrer"
     >
         {# @todo: this doesn't seem right, needs better styling, maybe a class? #}
-        {{ item.attributes.icon|default(false)
-            ? ux_icon(item.attributes.icon, {style: 'width:17px'})
-        }}
+        {% set icon = item.attributes.icon|default(null) %}
+        {% if icon %}
+            {% set icon = icon|trim %}
+            {% if icon starts with 'fas fa-' %}
+                {% set icon = 'fa6-solid:' ~ icon|replace({'fas fa-': ''}) %}
+            {% elseif icon starts with 'far fa-' %}
+                {% set icon = 'fa6-regular:' ~ icon|replace({'far fa-': ''}) %}
+            {% elseif icon starts with 'fab fa-' %}
+                {% set icon = 'fa6-brands:' ~ icon|replace({'fab fa-': ''}) %}
+            {% elseif icon starts with 'fa fa-' %}
+                {% set icon = 'fa6-solid:' ~ icon|replace({'fa fa-': ''}) %}
+            {% endif %}
+            {% set icon = icon|replace({'fa6-solid:home': 'fa6-solid:house', 'fa6-regular:home': 'fa6-regular:house'}) %}
+            {{ ux_icon(icon, {style: 'width:17px'}) }}
+        {% endif %}
         <span class="ms-2 d-none d-lg-block ps-2">
             {{ block('label') }}
 {#        {% set domain = item.extra('translation_domain','routing') %}#}
@@ -268,10 +280,20 @@
     {% import _self as ownmacro %}
     {{ ownmacro.setCssClassAttribute(item, 'LabelAttribute', 'dropdown-header') }}
     <div {{ macros.attributes(item.labelAttributes) }}>
-        {% set icon = item.attribute('icon') ?? false%}
-        {% if icon  %}
-            <i class="{{ item.attribute('icon') }}">   </i>
-            {{ item.attribute('icon')  }}
+        {% set icon = item.attribute('icon') ?? false %}
+        {% if icon %}
+            {% set icon = icon|trim %}
+            {% if icon starts with 'fas fa-' %}
+                {% set icon = 'fa6-solid:' ~ icon|replace({'fas fa-': ''}) %}
+            {% elseif icon starts with 'far fa-' %}
+                {% set icon = 'fa6-regular:' ~ icon|replace({'far fa-': ''}) %}
+            {% elseif icon starts with 'fab fa-' %}
+                {% set icon = 'fa6-brands:' ~ icon|replace({'fab fa-': ''}) %}
+            {% elseif icon starts with 'fa fa-' %}
+                {% set icon = 'fa6-solid:' ~ icon|replace({'fa fa-': ''}) %}
+            {% endif %}
+            {% set icon = icon|replace({'fa6-solid:home': 'fa6-solid:house', 'fa6-regular:home': 'fa6-regular:house'}) %}
+            {{ ux_icon(icon) }}
         {% endif %}
         {{ block('label') }}
     </div>
@@ -331,6 +353,17 @@
     <a href="{{ item.uri }}"{{ macros.attributes(attributes) }}>
         {% set icon = item.attribute('icon') %}
         {% if icon is not empty  %}
+            {% set icon = icon|trim %}
+            {% if icon starts with 'fas fa-' %}
+                {% set icon = 'fa6-solid:' ~ icon|replace({'fas fa-': ''}) %}
+            {% elseif icon starts with 'far fa-' %}
+                {% set icon = 'fa6-regular:' ~ icon|replace({'far fa-': ''}) %}
+            {% elseif icon starts with 'fab fa-' %}
+                {% set icon = 'fa6-brands:' ~ icon|replace({'fab fa-': ''}) %}
+            {% elseif icon starts with 'fa fa-' %}
+                {% set icon = 'fa6-solid:' ~ icon|replace({'fa fa-': ''}) %}
+            {% endif %}
+            {% set icon = icon|replace({'fa6-solid:home': 'fa6-solid:house', 'fa6-regular:home': 'fa6-regular:house'}) %}
             <span class="nav-link-icon d-md-none header-icons d-lg-inline-block">
                 {{ ux_icon(icon) }}
             </span>
@@ -350,8 +383,20 @@
     {{ ownmacro.setCssClassAttribute(item, 'LabelAttribute', item.attributes.class??'nav-link') }}
 {#    {{ ownmacro.setCssClassAttribute(item, 'LabelAttribute', 'nav-link') }}#}
     <span {{ macros.attributes(item.labelAttributes) }}>
-        {% if item.attribute('icon') is not empty  %}
-            <i class="{{ item.attribute('icon') }}"></i>
+        {% set icon = item.attribute('icon') %}
+        {% if icon is not empty  %}
+            {% set icon = icon|trim %}
+            {% if icon starts with 'fas fa-' %}
+                {% set icon = 'fa6-solid:' ~ icon|replace({'fas fa-': ''}) %}
+            {% elseif icon starts with 'far fa-' %}
+                {% set icon = 'fa6-regular:' ~ icon|replace({'far fa-': ''}) %}
+            {% elseif icon starts with 'fab fa-' %}
+                {% set icon = 'fa6-brands:' ~ icon|replace({'fab fa-': ''}) %}
+            {% elseif icon starts with 'fa fa-' %}
+                {% set icon = 'fa6-solid:' ~ icon|replace({'fa fa-': ''}) %}
+            {% endif %}
+            {% set icon = icon|replace({'fa6-solid:home': 'fa6-solid:house', 'fa6-regular:home': 'fa6-regular:house'}) %}
+            {{ ux_icon(icon) }}
         {% endif %}
         {{ block('label') }}
 	</span>
@@ -399,8 +444,20 @@
     <a {{ macros.attributes(attributes) }}
             href="#" id="collapse_{{itemSlug}}"
     >
-        {% if item.attribute('icon') ?? false %}
-            {{ ux_icon(item.attribute('icon'), {width: '13px'}) }}
+        {% set icon = item.attribute('icon') %}
+        {% if icon ?? false %}
+            {% set icon = icon|trim %}
+            {% if icon starts with 'fas fa-' %}
+                {% set icon = 'fa6-solid:' ~ icon|replace({'fas fa-': ''}) %}
+            {% elseif icon starts with 'far fa-' %}
+                {% set icon = 'fa6-regular:' ~ icon|replace({'far fa-': ''}) %}
+            {% elseif icon starts with 'fab fa-' %}
+                {% set icon = 'fa6-brands:' ~ icon|replace({'fab fa-': ''}) %}
+            {% elseif icon starts with 'fa fa-' %}
+                {% set icon = 'fa6-solid:' ~ icon|replace({'fa fa-': ''}) %}
+            {% endif %}
+            {% set icon = icon|replace({'fa6-solid:home': 'fa6-solid:house', 'fa6-regular:home': 'fa6-regular:house'}) %}
+            {{ ux_icon(icon, {width: '13px'}) }}
         {% endif %}
         {{ block('label') }}
 {#        <b class="caret"></b>#}
@@ -509,4 +566,3 @@
         {%- endif -%}
     {%- endfor -%}
 {% endmacro %}
-

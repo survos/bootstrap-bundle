@@ -1,0 +1,141 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "0d5ce7628b9745a4f89c9fd94fd7e810",
+    "packages": [
+        {
+            "name": "symfony/dotenv",
+            "version": "v8.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/dotenv.git",
+                "reference": "94d59769b0ea491dd8b635089e766519d28773d6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/dotenv/zipball/94d59769b0ea491dd8b635089e766519d28773d6",
+                "reference": "94d59769b0ea491dd8b635089e766519d28773d6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.4"
+            },
+            "require-dev": {
+                "symfony/console": "^7.4|^8.0",
+                "symfony/process": "^7.4|^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Dotenv\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Registers environment variables from a .env file",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/dotenv/tree/v8.0.6"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2026-02-13T12:00:38+00:00"
+        },
+        {
+            "name": "tacman/castor-tools",
+            "version": "1.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tacman/castor-tools.git",
+                "reference": "2d831bef53dba990c8a3f8ff3c59ecd5e1e34989"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tacman/castor-tools/zipball/2d831bef53dba990c8a3f8ff3c59ecd5e1e34989",
+                "reference": "2d831bef53dba990c8a3f8ff3c59ecd5e1e34989",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "symfony/dotenv": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "jolicode/castor": "^v1.1.0",
+                "roave/security-advisories": "dev-latest"
+            },
+            "type": "castor-plugin",
+            "autoload": {
+                "files": [
+                    "src/castor.php"
+                ],
+                "psr-4": {
+                    "Tacman\\CastorTools\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tac Tacelosky",
+                    "email": "tacman@gmail.com"
+                }
+            ],
+            "description": "Extend castor with some common tools",
+            "support": {
+                "issues": "https://github.com/tacman/castor-tools/issues",
+                "source": "https://github.com/tacman/castor-tools/tree/1.1.5"
+            },
+            "time": "2026-02-24T10:50:19+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
+}

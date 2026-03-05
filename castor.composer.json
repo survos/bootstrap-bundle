@@ -1,0 +1,5 @@
+{
+    "require": {
+        "tacman/castor-tools": "^1.1"
+    }
+}
