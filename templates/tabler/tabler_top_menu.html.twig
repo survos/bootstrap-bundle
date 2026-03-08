@@ -38,7 +38,9 @@
         {% set icon = item.attributes.icon|default(null) %}
         {% if icon %}
             {% set icon = icon|trim %}
-            {% if icon starts with 'fas fa-' %}
+            {% if icon starts with 'bi bi-' %}
+                {% set icon = 'bi:' ~ icon|replace({'bi bi-': ''}) %}
+            {% elseif icon starts with 'fas fa-' %}
                 {% set icon = 'fa6-solid:' ~ icon|replace({'fas fa-': ''}) %}
             {% elseif icon starts with 'far fa-' %}
                 {% set icon = 'fa6-regular:' ~ icon|replace({'far fa-': ''}) %}
