@@ -29,6 +29,7 @@ use Survos\BootstrapBundle\Twig\TablerExtension;
 use Survos\BootstrapBundle\Twig\TablerRuntimeExtension;
 use Survos\BootstrapBundle\Twig\TwigExtension;
 use Survos\CoreBundle\HasAssetMapperInterface;
+use Survos\CoreBundle\HasAssetMapperInterface;
 use Survos\CoreBundle\Traits\HasAssetMapperTrait;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -46,6 +47,8 @@ use Survos\BootstrapBundle\Translation\RoutesTranslationLoader;
 class SurvosBootstrapBundle extends AbstractBundle implements CompilerPassInterface, HasAssetMapperInterface
 {
     use HasAssetMapperTrait;
+
+    public const ASSET_NAMESPACE = '@survos/bootstrap';
 
     // protected string $extensionAlias = 'survos_bootstrap';
 
@@ -251,13 +254,6 @@ class SurvosBootstrapBundle extends AbstractBundle implements CompilerPassInterf
             ->arrayNode('menu_options')->useAttributeAsKey('name')->prototype('scalar')->end()->end() // arrayNode
             ->arrayNode('impersonate')->useAttributeAsKey('name')->prototype('scalar')->end()->end() // arrayNode
             ->end(); // rootNode
-    }
-
-    public function getPaths(): array
-    {
-        $dir = realpath(__DIR__ . '/../assets/');
-        assert(file_exists($dir), 'asset path must exist for the assets in ' . __DIR__);
-        return [$dir => '@survos/bootstrap'];
     }
 
     private function getAppConfig(): ArrayNodeDefinition
