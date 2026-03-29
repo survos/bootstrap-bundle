@@ -29,7 +29,6 @@ use Survos\BootstrapBundle\Twig\TablerExtension;
 use Survos\BootstrapBundle\Twig\TablerRuntimeExtension;
 use Survos\BootstrapBundle\Twig\TwigExtension;
 use Survos\CoreBundle\HasAssetMapperInterface;
-use Survos\CoreBundle\HasAssetMapperInterface;
 use Survos\CoreBundle\Traits\HasAssetMapperTrait;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
