@@ -28,8 +28,7 @@ use Survos\BootstrapBundle\Twig\Components\TablerPageHeader;
 use Survos\BootstrapBundle\Twig\TablerExtension;
 use Survos\BootstrapBundle\Twig\TablerRuntimeExtension;
 use Survos\BootstrapBundle\Twig\TwigExtension;
-use Survos\CoreBundle\HasAssetMapperInterface;
-use Survos\CoreBundle\Traits\HasAssetMapperTrait;
+use Survos\CoreBundle\Bundle\AssetMapperBundle;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\Configurator\DefinitionConfigurator;
@@ -38,16 +37,13 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\DependencyInjection\Reference;
-use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Survos\BootstrapBundle\Translation\RoutesTranslationLoader;
 
-class SurvosBootstrapBundle extends AbstractBundle implements CompilerPassInterface, HasAssetMapperInterface
+class SurvosBootstrapBundle extends AssetMapperBundle implements CompilerPassInterface
 {
-    use HasAssetMapperTrait;
-
-    public const ASSET_NAMESPACE = '@survos/bootstrap';
+    public const ASSET_PACKAGE = 'bootstrap';
 
     // protected string $extensionAlias = 'survos_bootstrap';
 

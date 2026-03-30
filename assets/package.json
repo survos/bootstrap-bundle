@@ -1,5 +1,5 @@
 {
-  "name": "@survos/bootstrap-bundle",
+  "name": "@survos/bootstrap",
   "description": "integrate php and javascript helpers for bootstrap-based admin themes (e.g. tabler), including menus",
   "license": "MIT",
   "version": "1.0.1",
@@ -10,15 +10,13 @@
         "webpackMode": "eager",
         "fetch": "lazy",
         "enabled": true,
-        "autoimport": {
-        }
+        "autoimport": {}
       }
     },
     "importmap": {
       "@hotwired/stimulus": "^3.2.2"
     },
-    "autoimport": {
-    }
+    "autoimport": {}
   },
   "peerDependencies": {
     "@hotwired/stimulus": "^3.2.2"
