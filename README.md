@@ -1,5 +1,9 @@
 # Bootstrap Bundle
 
+> **⚠️ This bundle is no longer maintained.**
+> 
+> Please use **[survos/tabler-bundle](https://github.com/survos/tabler-bundle)** instead, which provides the same functionality with better support.
+
 A common bootstrap layout, including menus and several components.
 
 This bundle leverages several Symfony components, and as such loads several dependencies, and is a fairly opinionated bundles.  Adhering to the coding suggestions offers several benefits.
